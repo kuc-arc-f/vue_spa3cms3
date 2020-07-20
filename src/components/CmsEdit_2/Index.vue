@@ -77,6 +77,7 @@ export default {
             cms_items: [],
             items_org: [],
             category_items: [],
+            page_items: [],
         }
     },
     methods: {
@@ -88,12 +89,18 @@ export default {
             });
             db.cms_edit.toArray().then(function ( data ) {
                 self.items_org = data
-console.log( self.items_org )
+//console.log( self.items_org )
             });       
             db.category.toArray().then(function ( data ) {
                 self.category_items = data
 //console.log( self.category_items )
+            }); 
+            db.pages.toArray().then(function ( data ) {
+                self.page_items = data
+//console.log( self.page_items )
             });       
+            // page_items
+
         },
         export_task: function(){
             var config = LibCmsEdit_3.get_const()
@@ -103,6 +110,7 @@ console.log( self.items_org )
                 file_version: config.file_version , 
                 items: this.items_org, 
                 category_items: this.category_items, 
+                page_items: this.page_items, 
             }
             var content = JSON.stringify( data  );
 //console.log( dt )

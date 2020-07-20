@@ -17,8 +17,10 @@ export default {
             DB_STORE: {
                 cms_edit: '++id, category, show_id , title, content , created_at',
                 category: '++id, name, save_id, created_at',
+                pages: '++id, save_id , title, content , created_at',
             },
-            file_version: 2,
+//            file_version: 2,
+            file_version: 3,
         }
     },
     get_show_item: function(items, id){
@@ -30,7 +32,17 @@ export default {
             }
         });
         return ret
-    },    
+    }, 
+    get_page_item: function(items, id){
+        var ret = null;
+        items.forEach(function(item){
+//console.log(item.show_id );
+            if(item.save_id == String(id) ){
+                ret = item
+            }
+        });
+        return ret
+    },        
     get_category_item: function(items, id){
         var ret = {
             id: 0,

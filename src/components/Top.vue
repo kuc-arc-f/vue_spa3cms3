@@ -34,8 +34,27 @@
             <p> <br>
             </p>
             </div>
-        </div>         
-        <!-- category_wrap -->
+        </div>   
+        <!-- pages_wrap -->
+        <div v-if="pages_display==1" class="category_wrap" style="padding-bottom: 0px;">
+            <div class="row conte" style="margin-top: 20px; margin-bottom:20px;">
+                <div class="col-sm-12">
+                    <h2 class="h4_td_title mt-2" >ページ</h2>
+                    <div class="page_btn_wrap mb-0">
+                        <span v-for="item in page_items" v-bind:key="item.id">
+                            <router-link :to="'/pages/' + item.save_id"
+                            class="btn btn-outline-primary" style="margin-left: 10px; margin-bottom: 10px;"
+                            target="_blank">
+                                {{ item.title }}
+                            </router-link>
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- category_wrap  -->
         <div class="category_wrap" style="padding-bottom: 0px;">
             <div class="row conte" style="margin-top: 20px; margin-bottom:20px;">
                 <div class="col-sm-12">
@@ -121,7 +140,7 @@ export default {
     components: { Head },    
     mixins:[Mixin],
     created () {
-        this.page_items(1)
+        this.get_page_items(1)
         var url = this.get_exStorage( this.sysConst.KEY_NEXT_ACTION )
         this.remove_exStorage(this.sysConst.KEY_NEXT_ACTION )
 //console.log("url="+ url );
@@ -133,16 +152,17 @@ export default {
         return {
             cms_items: [],
             category_items : [],
+            page_items: [],
             items_all : [],
             pagenate_display : 0,
             page_one_max : 20, /* 1 page max */
             page_number : 1,
             page_max : 0,
+            pages_display : 0,
         }
     },
     methods: {
-        page_items (page ){
-console.log( page )
+        get_page_items (page ){
             var dt = LibCommon.formatDate( new Date(), "YYYY-MM-DD_hhmmss");
             axios.get('/cms.json?' + dt).then(res =>  {
                 var data = res.data
@@ -150,8 +170,14 @@ console.log( page )
                 if(data.file_version != null){
                     items = LibCommon.get_reverse_items(data.items )
                     if(data.category_items != null){
-                    //console.log( data.category_items ) 
                         this.category_items = data.category_items
+                    }
+                    if(data.page_items != null){
+console.log( data.page_items.length )
+                        if(data.page_items.length > 0){
+                            this.pages_display = 1
+                        }
+                        this.page_items = data.page_items
                     }
                     this.items_all = items;
                 }else{
@@ -159,7 +185,6 @@ console.log( page )
                 }
                 this.page_max = LibPaginate.get_max_page(items, this.page_one_max)
                 this.cms_items = LibPaginate.get_items(items, page , this.page_one_max )
-//console.log( this.page_max )
 // console.log( this.cms_items )
                 if(this.page_max >=2 ){
                     this.pagenate_display = 1
@@ -178,9 +203,7 @@ console.log( page )
 //console.log( id )
             this.pagenate_display = 0
             this.cms_items = LibCmsEdit_3.get_category_data(this.items_all ,id)
-//console.log( d )
         }               
-
     }
 
 }

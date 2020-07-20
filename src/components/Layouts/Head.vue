@@ -5,7 +5,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-4">
-                        <a href="/"><p>TestCMS</p></a>
+                        <a href="/"><p>CMS 3</p></a>
                     </div>
                     <div class="col-sm-8" style="text-align: right;">
                     <!-- nav -->	  

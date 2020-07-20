@@ -17,6 +17,7 @@
     </div>
 </template>
 
+<!-- -->
 <script>
 import {Mixin} from '../../mixin'
 import Dexie from 'dexie';
@@ -95,11 +96,25 @@ console.log( dat.file_version )
 //console.log(  data )
                 db.category.add( data )
             });
-        },          
+        }, 
+        add_pages:async function(dat ){
+            db.pages.clear()
+            await dat.page_items.forEach(function(item){
+                var data = {
+                    save_id: item.save_id,
+                    title: item.title,
+                    content: item.content,
+                    created_at: new Date(item.created_at),
+                }
+//console.log( item )
+//console.log(  data )
+                db.pages.add( data )
+            });
+        },                  
         add_item:async function(dat ){
             db.cms_edit.clear()
             await dat.items.forEach(function(item){
-console.log( item.category  )
+//console.log( item.category  )
                 var data = {
 //                    category_id: item.category_id,
                     category: item.category,
@@ -113,6 +128,7 @@ console.log( item.category  )
 
             });
             await this.add_category( dat )
+            await this.add_pages( dat )
             //var self = this
             setTimeout(function () {
                 $('#complete_msg').css('display','inherit');
