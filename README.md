@@ -6,18 +6,18 @@
 
  date    : 2020/07/19
 
- update  : 2020/07/21
+ update  : 2020/07/21 
 
 ***
 ### Summary
 
-IndexedDB + Dexie.js + Vue CLI , cms edit app
+IndexedDB + Dexie.js + Vue CLI , cms app
 
 
 ***
 ### sample , CMS edit app
 
-https://cms3-kuc.netlify.app/#/edit
+https://cms3-kuc.netlify.app
 
 ***
 ### Blog :
