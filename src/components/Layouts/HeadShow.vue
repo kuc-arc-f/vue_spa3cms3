@@ -9,25 +9,22 @@
                     </div>
                     <div class="col-sm-8" style="text-align: right;">
                     <!-- nav -->	  
-                    <!-- 
-                        <div class='menubar'>
-                            <ul class='menu text-border'>
-                                <li><a href='#post_items_box'>posts</a></li>
-                            </ul>
-                        </div>
-                    -->
                     </div>
                 </div>
             </div>
         </div><!-- end_div_head -->
         <!-- mobile-nav -->
         <div id="nav-mobile" style="width:100%;">
-            <a class="toggle">
-                <span class="glyphicon glyphicon-menu-hamburger" style="font-size: 34px; color: #FFF"></span>
-            </a>
+            <a class="toggle" v-on:click="toggle_click()">
+                <span style="font-size: 34px; color: #FFF">
+                    <i class="fas fa-bars"></i>
+                </span>
+            </a>            
             <div class="mobile-child">
                 <ul class='ul_mobile-child'>
-                <li class="mobile-menu-item"><a href='#post_items_box'>posts</a></li>
+                    <!--
+                    <li class="mobile-menu-item"><a href='#post_items_box'>posts</a></li>
+                        -->
                 </ul>
             </div>
         </div>
@@ -37,3 +34,19 @@
 <!-- -->
 <style>
 </style>
+<!-- -->
+ <script>
+ import $ from 'jquery'
+
+ //
+export default {
+    created() {
+    },
+    methods: {
+        toggle_click(){
+            $(".mobile-child").slideToggle(300);
+//console.log("#-demo01")
+        },
+    }    
+}
+</script>
