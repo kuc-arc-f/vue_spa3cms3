@@ -41,9 +41,15 @@ export default {
         },
         add_item: function(num){
 console.log(num)
+            var category = {
+                id: 0,
+                name: "",
+                save_id: "id0",
+            };
             var dt = LibCommon.formatDate( new Date(), "YYYYMMDDhhmmss");
             var task = {
-                category_id: 0,
+//                category_id: 0,
+                category: category,
                 show_id: dt,
                 title: "title-" + num,
                 content: "content-"+ num,
