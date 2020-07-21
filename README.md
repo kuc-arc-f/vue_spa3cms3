@@ -6,7 +6,7 @@
 
  date    : 2020/07/19
 
- update  : 2020/07/21
+ update  : 2020/07/21 
 
 ***
 ### Summary
@@ -22,6 +22,7 @@ https://cms3-kuc.netlify.app/#/edit
 ***
 ### Blog :
 
+https://note.com/knaka0209/n/nc10d352550ed
 
 ***
 
