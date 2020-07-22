@@ -6,14 +6,37 @@
 
  date    : 2020/07/19
 
- update  : 2020/07/21 
+ update  : 2020/07/22 
 
 ***
 ### Summary
 
-IndexedDB + Dexie.js + Vue CLI , cms app
+IndexedDB + Dexie.js + Vue CLI , cms display app
 
 
+***
+### Setup
+
+* npm install -g @vue/cli
+
+* vue create my-project
+
+* cd my-project
+
+* start server
+
+***
+### npm
+
+npm install --save dexie
+
+***
+### start server
+npm run serve
+
+* build project, deploy
+
+npm run build
 ***
 ### sample , CMS edit app
 
