@@ -81,5 +81,14 @@ div#div_img_main2 {
     background-size: cover;
     text-align: center;
 }
+div#post_item > p > img{
+    max-width : 100%;
+    height : auto;
+}
+div#post_item > hr {
+  height: 1px;
+  background-color: #000;
+  border: none;
+}
 </style>
 
