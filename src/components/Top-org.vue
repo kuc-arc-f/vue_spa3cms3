@@ -1,7 +1,7 @@
 <template>
-<div class="body_main_wrap">
+<div class="body_main_wrap" style="background-color: #EEE">
     <Head />
-    <div id="div_img_main2"  class="cover" valign="bottom">
+    <div id="div_img_main2"  class="cover" style="" valign="bottom">
         <div id="div_img_layer">
             <h1>〇〇 Blog<br />
             </h1>
@@ -9,9 +9,34 @@
     </div>     
     <!-- -->
     <div class="container">
-        <TopContent1></TopContent1>
+        <div class="row conte" id="id_row_service" style="margin-top:10px;">
+            <div class="col-sm-12" style="text-align:center;">
+            <h2 class="h4_td_title mt-2">トピック</h2>
+            <hr class="hr_ex1"/>
+            </div>
+        </div>
+        <div class="row conte">
+            <div class="col-sm-4">
+            <img class="img_kao" src="/img/pc1.png" style="margin : 10px;">
+            </div>
+            <div class="col-sm-8">
+            <h3>このサイトの紹介 1</h3>
+            <p> <br>
+            </p>
+            </div>
+        </div>
+        <div class="row conte">
+            <div class="col-sm-4">
+            <img class="img_kao" src="/img/pc1.png" style="margin : 10px;">
+            </div>
+            <div class="col-sm-8">
+            <h3>このサイトの紹介 2</h3>
+            <p> <br>
+            </p>
+            </div>
+        </div>   
         <!-- pages_wrap -->
-        <div v-if="pages_display==1" class="category_wrap">
+        <div v-if="pages_display==1" class="category_wrap" style="padding-bottom: 0px;">
             <div class="row conte" style="margin-top: 20px; margin-bottom:20px;">
                 <div class="col-sm-12">
                     <h2 class="h4_td_title mt-2" >ページ</h2>
@@ -28,8 +53,9 @@
                 </div>
             </div>
         </div>
+
         <!-- category_wrap  -->
-        <div class="category_wrap">
+        <div class="category_wrap" style="padding-bottom: 0px;">
             <div class="row conte" style="margin-top: 20px; margin-bottom:20px;">
                 <div class="col-sm-12">
                     <h2 class="h4_td_title mt-2" >カテゴリー</h2>
@@ -53,9 +79,37 @@
                     <div id="div_news">
                         <h2 class="h4_td_title mt-2" >新着の投稿</h2>
                     </div>
-                    <TopPostItems v-for="item in cms_items" v-bind:key="item.id"
-                        v-bind:item="item">
-                    </TopPostItems>
+                    <div class="post_items_wrap" v-for="item in cms_items" v-bind:key="item.id"
+                        style="margin-bottom: 20px;">
+                        <div class="div_news_rows" style="width:100%;">
+                            <span  style="font-size: 28px; float :left; margin-right: 10px;">
+                                <i class="fas fa-arrow-circle-right"></i>
+                            </span>
+                            &nbsp;&nbsp;
+                            <h3 class="ml-10"> 
+                                <router-link :to="'/show/' + item.show_id">{{ item.title }}
+                                </router-link>
+                            </h3>
+                        </div>
+                        <div style="width:100%;">
+                            <ul class="ul_time_box">
+                            <li>
+                                <p class="mb-0">&nbsp;&nbsp;
+                                    <span style="font-size: 20px; margin-right: 10px;">
+                                        <i class="far fa-calendar"></i>
+                                    </span>
+                                    {{ item.created_at }} , ID: {{item.id}}
+                                </p>
+                                <div v-if="item.category.name!=''">
+                                    <span style="font-size: 20px; margin-right: 10px;">
+                                        <i class="fas fa-folder"></i> {{ item.category.name }}
+                                    </span>                                    
+                                </div>
+                            </li>
+                            </ul>
+                        </div>                
+                        <hr class="hr_ex1"  />
+                    </div>
                     <!-- paginate -->
                     <div v-if="pagenate_display==1" class="paginate_wrap" 
                         style="text-align: center;">
@@ -73,21 +127,17 @@
 </div>
 </template>
 
-<!-- -->
 <script>
 import {Mixin} from '../mixin'
 import axios from 'axios'
 // import $ from 'jquery'
 import LibCommon from '@/libs/LibCommon';
 import LibPaginate from '@/libs/LibPaginate';
-import LibCmsEdit_3 from '@/libs/LibCmsEdit_3';
-
 import Head from '@/components/Layouts/Head'
-import TopContent1 from '@/components/Element/TopContent1'
-import TopPostItems from '@/components/Element/TopPostItems'
+import LibCmsEdit_3 from '@/libs/LibCmsEdit_3';
 //
 export default {
-    components: { Head , TopContent1 ,TopPostItems },    
+    components: { Head },    
     mixins:[Mixin],
     created () {
         this.get_page_items(1)
@@ -161,9 +211,6 @@ console.log( data.page_items.length )
 
 <!-- -->
 <style>
-.body_main_wrap{
-    background-color: #EEE;
-}
 div#div_img_main2 {
     height: 300px;
     color: #FFF;
