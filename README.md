@@ -47,5 +47,9 @@ https://cms3-kuc.netlify.app
 
 https://note.com/knaka0209/n/nc10d352550ed
 
+* Github pages 対応: 2020/08/02 
+
+https://note.com/knaka0209/n/n5f6786cc83b0
+
 ***
 
