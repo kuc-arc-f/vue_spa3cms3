@@ -1,22 +1,3 @@
-/* purple */
-/*
-@mycolor-main  : #512DA8;
-@mycolor-sub   : #9575CD;
-@mycolor-accent: #2196F3;
-*/
-/* blue */
-/*
-@mycolor-main  : #03A9F4;
-@mycolor-sub   : #64B5F6;
-@mycolor-accent: #FF80AB;
-*/
-/* green  */
-/*
-@mycolor-main  : #4CAF50;
-@mycolor-sub   : #66BB6A;
-@mycolor-accent: #FFC107;
-
-*/
 a {
   color: inherit;
 }
@@ -64,26 +45,18 @@ div#div_head {
 #div_head p {
   margin: 10px;
   padding: 0;
-  /*文字の装飾は省略*/
   color: white;
-  /*文字は白に*/
   font-weight: bold;
-  /*太字に*/
   font-size: 2em;
-  /*サイズ2倍*/
 }
 .p_head_str1 {
   margin: 0;
   padding: 0;
   color: white;
-  /*文字は白に*/
   font-size: 16px;
-  /*サイズ2倍*/
 }
 .head-image {
-  /*親div*/
   position: relative;
-  /*相対配置*/
 }
 /* left: 50%; */
 .head-image p {
@@ -92,14 +65,9 @@ div#div_head {
   left: 20px;
   margin: 0;
   padding: 0;
-  /*文字の装飾は省略*/
   color: white;
-  /*文字は白に*/
   font-weight: bold;
-  /*太字に*/
   font-size: 3em;
-  /*サイズ2倍*/
-  /* font-family :Quicksand, sans-serif; */
 }
 .td_mid_text {
   padding: 20px;
@@ -125,9 +93,6 @@ div#div_head {
 }
 .p_foot_str {
   color: #FFF;
-}
-div#id_main_conte {
-  /* background-color: #FFF; */
 }
 .hr_ex1 {
   height: 1px;
@@ -191,7 +156,6 @@ div#id_main_conte {
 .menubar {
   display: flex;
   justify-content: space-between;
-  /* height: 20%; */
 }
 ul.menu {
   margin: 0;
@@ -210,12 +174,6 @@ ul.menu {
 .mobile-child {
   display: none;
 }
-/*
-ul.menu-mobile {
-  display: none;    
-}
-
-*/
 #nav-mobile {
   display: none;
 }
@@ -224,10 +182,6 @@ ul.menu-mobile {
   width: 100%;
   text-align: right;
   padding-right: 10px;
-  /*
- padding: 10px; 
- background: red;
- */
 }
 /* ========= */
 /* post -css */
@@ -282,4 +236,33 @@ ul li.recent-pst-list-item {
 li p.p_side_box {
   margin: 0;
   padding: 0;
+}
+
+/*  SP */
+@media screen and (max-width:480px){
+    #div_img_main2 h1 {
+        font-size: 24px;
+        padding: 2em 1em;
+    }
+    div > .menubar {
+        display: none;
+    }
+    #nav-mobile {
+        display: block;
+        background: #757575;
+        padding: 10px;
+    }
+    ul.ul_mobile-child {
+        list-style: none;
+    }
+    .mobile-menu-item {
+        padding: 10px;
+        margin-bottom: 5px;
+        color: white;
+        width: 100%;
+        font-size: 16px;
+        text-align: left;
+        border: solid 1px white;
+        background: #757575;
+    }  
 }

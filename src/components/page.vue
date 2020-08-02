@@ -52,7 +52,7 @@ export default {
         async get_item(id){
 //console.log( id ) 
             var dt = LibCommon.formatDate( new Date(), "YYYY-MM-DD_hhmmss");
-            axios.get('/cms.json?' + dt).then(res =>  {
+            axios.get('./cms.json?' + dt).then(res =>  {
                 var data = res.data
 console.log( data.page_items )
                 var items = LibCommon.convert_items(data.page_items )
@@ -71,14 +71,5 @@ console.log( item )
 
 <!-- -->
 <style>
-div#div_img_main2 {
-    height: 300px;
-    color: #FFF;
-    margin: 0 0 0px;
-    width: 100%;
-    background:#ddd url(/img/ph2.jpg) no-repeat center center;
-    background-size: cover;
-    text-align: center;
-}
 </style>
 

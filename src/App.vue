@@ -15,6 +15,9 @@
 //import navbar from './components/Layouts/Navbar'
 import Footer from './components/Layouts/Footer'
 
+import './css/main.css'
+import './css/theme.css'
+
 //
 export default {
   name: 'app',

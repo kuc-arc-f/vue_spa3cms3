@@ -3,7 +3,7 @@
     <Head />
     <div id="div_img_main2"  class="cover" valign="bottom">
         <div id="div_img_layer">
-            <h1>〇〇 Blog<br />
+            <h1>CMS - Sample<br />
             </h1>
         </div>
     </div>     
@@ -90,13 +90,12 @@ export default {
     components: { Head , TopContent1 ,TopPostItems },    
     mixins:[Mixin],
     created () {
-        this.get_page_items(1)
         var url = this.get_exStorage( this.sysConst.KEY_NEXT_ACTION )
         this.remove_exStorage(this.sysConst.KEY_NEXT_ACTION )
-//console.log("url="+ url );
         if(url.length > 0){
             this.$router.push( url )
         }
+        this.get_page_items(1)
     },
     data () {
         return {
@@ -109,12 +108,15 @@ export default {
             page_number : 1,
             page_max : 0,
             pages_display : 0,
+            URL_BASE: "",
         }
     },
     methods: {
         get_page_items (page ){
             var dt = LibCommon.formatDate( new Date(), "YYYY-MM-DD_hhmmss");
-            axios.get('/cms.json?' + dt).then(res =>  {
+            var url = './cms.json?' + dt
+//console.log(url)
+            axios.get(url).then(res =>  {
                 var data = res.data
                 var items = []
                 if(data.file_version != null){
@@ -123,7 +125,7 @@ export default {
                         this.category_items = data.category_items
                     }
                     if(data.page_items != null){
-console.log( data.page_items.length )
+//console.log( data.page_items.length )
                         if(data.page_items.length > 0){
                             this.pages_display = 1
                         }
@@ -169,7 +171,7 @@ div#div_img_main2 {
     color: #FFF;
     margin: 0 0 0px;
     width: 100%;
-    background:#ddd url(/img/ph2.jpg) no-repeat center center;
+    background:#ddd url(https://raw.githubusercontent.com/kuc-arc-f/screen-img/master/web/ph2.jpg) no-repeat center center;
     background-size: cover;
     text-align: center;
 }
