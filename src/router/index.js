@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-//import home from '../components/Home'
 import about from '../components/About'
 import top from '../components/Top'
 import show from '../components/show'

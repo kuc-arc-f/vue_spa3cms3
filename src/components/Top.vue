@@ -171,7 +171,7 @@ div#div_img_main2 {
     color: #FFF;
     margin: 0 0 0px;
     width: 100%;
-    background:#ddd url(https://raw.githubusercontent.com/kuc-arc-f/screen-img/master/web/ph2.jpg) no-repeat center center;
+    background:#ddd url(https://raw.githubusercontent.com/kuc-arc-f/screen-img/master/web/img-4.jpg) no-repeat center center;
     background-size: cover;
     text-align: center;
 }

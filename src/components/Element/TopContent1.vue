@@ -12,18 +12,10 @@
              style="margin : 10px;">
         </div>
         <div class="col-sm-8">
-            <h3>このサイトの紹介 1</h3>
+            <h3>サイトの紹介1</h3>
+            <p>このサイトの、説明文章になります。</p>
         </div>
     </div>
-    <div class="row conte">
-        <div class="col-sm-4">
-            <img class="img_kao" src="https://raw.githubusercontent.com/kuc-arc-f/screen-img/master/web/pc1.png"
-             style="margin : 10px;">
-        </div>
-        <div class="col-sm-8">
-            <h3>このサイトの紹介 2</h3>
-        </div>
-    </div>     
 </div>
 </template>
 
