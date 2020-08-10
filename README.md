@@ -6,7 +6,7 @@
 
  date    : 2020/07/19
 
- update  : 2020/08/10
+ update  : 2020/08/10 
 
 ***
 ### Summary
@@ -40,7 +40,7 @@ npm run build
 ***
 ### sample , CMS edit app
 
-https://cms3-kuc.netlify.app
+https://kuc-arc-f.github.io/cms-sample
 
 ***
 ### Blog :
