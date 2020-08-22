@@ -10,48 +10,56 @@
     <!-- -->
     <div class="container">
         <TopContent1></TopContent1>
-        <!-- pages_wrap -->
-        <div v-if="pages_display==1" class="category_wrap">
-            <div class="row conte" style="margin-top: 20px; margin-bottom:20px;">
-                <div class="col-sm-12">
-                    <h2 class="h4_td_title mt-2" >ページ</h2>
-                    <div class="page_btn_wrap mb-0">
-                        <span v-for="item in page_items" v-bind:key="item.id">
-                            <router-link :to="'/pages/' + item.save_id"
-                            class="btn btn-outline-primary" style="margin-left: 10px; margin-bottom: 10px;"
-                            target="_blank">
-                                {{ item.title }}
-                            </router-link>
-                        </span>
-                    </div>
-
-                </div>
+        <div class="btn_menu_area_wrap">
+            <div class="row conte mt-2 mb-2" >
+                <a href="#" class="ml-4 mt-2 mb-2 menu_display_btn">
+                    <i class="fas fa-bars"></i>
+                </a>                
             </div>
         </div>
-        <!-- category_wrap  -->
-        <div class="category_wrap">
-            <div class="row conte" style="margin-top: 20px; margin-bottom:20px;">
-                <div class="col-sm-12">
-                    <h2 class="h4_td_title mt-2" >カテゴリー</h2>
-                    <div class="category_btn_wrap mb-0">
-                        <span v-for="item in category_items" v-bind:key="item.id">
-                            <button class="btn btn-outline-primary" 
-                            style="margin-left: 10px; margin-bottom: 10px;"
-                            v-on:click="get_category_items(item.save_id )">
-                                {{item.name}}
-                            </button>
-                        </span>
-                    </div>
+        <div class="btn_hidden_ara_wrap">
+            <!-- pages_wrap -->
+            <div v-if="pages_display==1" class="category_wrap">
+                <div class="row conte mt-2 mb-2">
+                    <div class="col-sm-12">
+                        <h2 class="h4_td_title mt-2" >Pages</h2>
+                        <div class="page_btn_wrap mb-0">
+                            <span v-for="item in page_items" v-bind:key="item.id">
+                                <router-link :to="'/pages/' + item.save_id"
+                                class="btn btn-outline-dark ml-2 mb-2"
+                                target="_blank">
+                                    {{ item.title }}
+                                </router-link>
+                            </span>
+                        </div>
 
+                    </div>
                 </div>
             </div>
-        </div>
+            <!-- category_wrap  -->
+            <div class="category_wrap">
+                <div class="row conte" style="margin-top: 20px; margin-bottom:20px;">
+                    <div class="col-sm-12">
+                        <h2 class="h4_td_title mt-2" >Category</h2>
+                        <div class="category_btn_wrap mb-0">
+                            <span v-for="item in category_items" v-bind:key="item.id">
+                                <button class="btn btn-outline-dark ml-2 mb-2" 
+                                v-on:click="get_category_items(item.save_id )">
+                                    {{item.name}}
+                                </button>
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>            
+        </div>        
         <!-- body_wrap -->
-        <div class="body_wrap" style="padding-bottom: 20px;">
-            <div id="post_items_box" class="row conte" style="margin-top: 10px; margin-bottom:20px;">
+        <div class="body_wrap mb-2" >
+            <div id="post_items_box" class="row conte mt-2" style="margin-bottom:20px;">
                 <div class="col-sm-12">
                     <div id="div_news">
-                        <h2 class="h4_td_title mt-2" >新着の投稿</h2>
+                        <h2 class="h4_td_title mt-2" >New Posts</h2>
                     </div>
                     <TopPostItems v-for="item in cms_items" v-bind:key="item.id"
                         v-bind:item="item">
@@ -77,7 +85,7 @@
 <script>
 import {Mixin} from '../mixin'
 import axios from 'axios'
-// import $ from 'jquery'
+import $ from 'jquery'
 import LibCommon from '@/libs/LibCommon';
 import LibPaginate from '@/libs/LibPaginate';
 import LibCmsEdit_3 from '@/libs/LibCmsEdit_3';
@@ -159,6 +167,12 @@ export default {
     }
 
 }
+//
+$(function(){
+	$( '.menu_display_btn' ).click( function() {
+		$('.btn_hidden_ara_wrap').css('display','inherit');
+	});
+});
 </script>
 
 <!-- -->

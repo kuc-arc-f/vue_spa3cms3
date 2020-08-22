@@ -1,0 +1,9 @@
+.btn_menu_area_wrap{
+  font-size: 2rem;
+  /* color: #4CAF50; */
+   color: #FF7043;
+}
+.btn_hidden_ara_wrap{ display:none; }
+.pages_wrap .page_title_btn{ font-size: 1.4rem; }
+
+.category_wrap .page_category_btn{ font-size: 1.4rem; }

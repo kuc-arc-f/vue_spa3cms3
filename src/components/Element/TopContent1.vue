@@ -2,7 +2,7 @@
 <div class="top_content1_wrap">
     <div class="row conte" id="id_row_service" style="margin-top:10px;">
         <div class="col-sm-12" style="text-align:center;">
-            <h2 class="h4_td_title mt-2">トピック</h2>
+            <h2 class="h4_td_title mt-2">Topic</h2>
             <hr class="hr_ex1"/>
         </div>
     </div>

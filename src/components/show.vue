@@ -1,6 +1,6 @@
 <template>
 <div >
-    <HeadShow />
+    <Head />
     <div class="container">
         <router-link :to="'/'" class="btn btn-outline-primary mt-2">Back
         </router-link>
@@ -23,13 +23,14 @@
 import {Mixin} from '../mixin'
 import marked from  'marked'
 import axios from 'axios'
-import HeadShow from '@/components/Layouts/HeadShow'
+//import HeadShow from '@/components/Layouts/HeadShow'
+import Head from '@/components/Layouts/Head'
 import LibCommon from '@/libs/LibCommon';
 import LibCmsEdit_3 from '@/libs/LibCmsEdit_3';
 
 //
 export default {
-    components: { HeadShow },    
+    components: { Head },    
     mixins:[Mixin],
     created () {
         var show_id = String(this.$route.params.id)

@@ -17,6 +17,7 @@ import Footer from './components/Layouts/Footer'
 
 import './css/main.css'
 import './css/theme.css'
+import './css/type1.css'
 
 //
 export default {
