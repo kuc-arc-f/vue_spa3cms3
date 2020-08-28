@@ -12,7 +12,7 @@
         <TopContent1></TopContent1>
         <div class="btn_menu_area_wrap">
             <div class="row conte mt-2 mb-2" >
-                <a href="#" class="ml-4 mt-2 mb-2 menu_display_btn">
+                <a class="ml-4 mt-2 mb-2 menu_display_btn">
                     <i class="fas fa-bars"></i>
                 </a>                
             </div>
