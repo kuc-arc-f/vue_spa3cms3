@@ -4,13 +4,23 @@
     <div class="container">
         <router-link :to="'/'" class="btn btn-outline-primary mt-2">Back
         </router-link>
-        <hr class="mt-2 mb-2" />        
+        <hr class="mt-2 mb-2" />
+        <div class="show_head_wrap">
+            <i class="fas fa-home"></i> 
+            <span v-if="category_name">
+                > <i class="fas fa-folder"></i> {{ category_name }}
+            </span>
+            > {{ title }}
+        </div>        
+        <hr />
         <h1>{{ title }}</h1>
-        ID : {{ id }}<br />
         date : {{ create }}<br />
+        ID : {{ id }}<br />
+        <!--
         <span style="font-size: 20px; margin-right: 10px;">
             <i class="fas fa-folder"></i>  {{ category_name }}<br />
         </span>        
+        -->
         <hr />
         <div id="post_item" v-html="content"></div>
         <hr />
@@ -63,7 +73,7 @@ export default {
                 this.create = item.created_at
                 this.id = item.id
                 this.category_name = item.category.name
-//  console.log( item )
+console.log( item )
             })
         },
     }
@@ -73,6 +83,8 @@ export default {
 
 <!-- -->
 <style>
+.show_head_wrap{ font-size: 1.4rem; }
+
 div#post_item > p > img{
     max-width : 100%;
     height : auto;

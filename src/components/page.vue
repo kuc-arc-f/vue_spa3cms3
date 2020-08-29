@@ -2,11 +2,12 @@
 <div >
     <Head />
     <div class="container">
-        <!--
-        <router-link :to="'/'" class="btn btn-outline-primary mt-2">Back
-        </router-link>
-        <hr class="mt-2 mb-2" />        
-        -->
+        <div class="page_head_wrap mt-2">
+            <i class="fas fa-home"></i>
+            > {{ title }}
+        </div>
+
+        <hr />
         <h1>{{ title }}</h1>
         ID : {{ id }}<br />
         date : {{ create }}<br />
@@ -23,7 +24,6 @@ import {Mixin} from '../mixin'
 import marked from  'marked'
 import axios from 'axios'
 import Head from '@/components/Layouts/Head'
-//import HeadShow from '@/components/Layouts/HeadShow'
 import LibCommon from '@/libs/LibCommon';
 import LibCmsEdit_3 from '@/libs/LibCmsEdit_3';
 
@@ -71,5 +71,6 @@ console.log( item )
 
 <!-- -->
 <style>
+.page_head_wrap{ font-size: 1.4rem; }
 </style>
 
